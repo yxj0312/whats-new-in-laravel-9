@@ -15,7 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return str('hello world')->upper();
+    // return Str::of('hello world')->upper();
+    // return view('welcome');
+})->name('home');
+
+Route::get('/endpoint', function () {
+    // return redirect()->route('name');
+    return to_route('home');
 });
 
 
