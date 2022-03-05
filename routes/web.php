@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    throw new Exception("Error Processing Request", 1);
+    return Blade::render('{{ $greeting }}, World', ['greeting' => 'Hello']);
+
+    // throw new Exception("Error Processing Request", 1);
     
     // return str('hello world')->upper();
     // return Str::of('hello world')->upper();
