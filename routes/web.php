@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\PostsController;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,3 +37,12 @@ Route::controller(PostsController::class)->group(function() {
     Route::get('/posts/{post}', 'show');
     Route::post('/posts/', 'store');
 });
+
+
+// Route::get('/users/{user}/posts/{post:id}', function(User $user, Post $post){
+//     return $post;
+// });
+
+Route::get('/users/{user}/posts/{post}', function(User $user, Post $post){
+    return $post;
+})->scopeBindings();
