@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return Blade::render('{{ $greeting }}, World', ['greeting' => 'Hello']);
+    return Post::search('voluptatem')->paginate();
+
+    // return Blade::render('{{ $greeting }}, World', ['greeting' => 'Hello']);
 
     // throw new Exception("Error Processing Request", 1);
     
