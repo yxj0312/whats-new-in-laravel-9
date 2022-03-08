@@ -10,6 +10,7 @@ class Post extends Model
 {
     use HasFactory, Searchable;
 
+    #[SearchUsingFullText('body')]
     public function toSearchableArray()
     {
         return [
