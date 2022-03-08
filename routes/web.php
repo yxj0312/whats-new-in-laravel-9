@@ -48,3 +48,9 @@ Route::controller(PostsController::class)->group(function() {
 Route::get('/users/{user}/posts/{post}', function(User $user, Post $post){
     return $post;
 })->scopeBindings();
+
+Route::get('/about', function() {
+    $name = 'foo';
+
+    return 'The About Page';
+});
