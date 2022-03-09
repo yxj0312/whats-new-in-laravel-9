@@ -48,16 +48,16 @@ Route::get('/endpoint', function () {
     return to_route('home');
 });
 
-Route::get('/posts/{state}', function(PostState $state){
-    dd($state);
-});
+// Route::get('/posts/{state}', function(PostState $state){
+//     dd($state);
+// });
 
 
-Route::controller(PostsController::class)->group(function() {
-    Route::get('/posts', 'index');
-    Route::get('/posts/{post}', 'show');
-    Route::post('/posts/', 'store');
-});
+// Route::controller(PostsController::class)->group(function() {
+//     Route::get('/posts', 'index');
+//     Route::get('/posts/{post}', 'show');
+//     Route::post('/posts/', 'store');
+// });
 
 
 // Route::get('/users/{user}/posts/{post:id}', function(User $user, Post $post){
@@ -73,3 +73,7 @@ Route::get('/about', function() {
 
     return 'The About Page';
 });
+
+Route::get('/posts/{post}', function(Post $post){
+    return $post;
+})->name('posts.show');

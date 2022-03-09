@@ -15,6 +15,10 @@ class Post extends Model
         'state' => PostState::class
     ];
 
+    protected $appends = [
+        'path'
+    ];
+
     #[SearchUsingFullText('body')]
     public function toSearchableArray()
     {
@@ -22,5 +26,10 @@ class Post extends Model
             'title' => $this->title,
             'body' => $this->body
         ];
+    }
+
+    public function getPathAttribute()
+    {
+        return route('posts.show', $this);
     }
 }
