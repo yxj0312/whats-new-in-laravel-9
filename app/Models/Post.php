@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\PostState;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
@@ -26,6 +27,11 @@ class Post extends Model
             'title' => $this->title,
             'body' => $this->body
         ];
+    }
+
+    public function path(): Attribute
+    {
+        
     }
 
     public function getPathAttribute()
