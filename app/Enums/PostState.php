@@ -2,9 +2,9 @@
 
 namespace App\Enums;
 
-enum PostState
+enum PostState: string
 {
-    case Draft;
-    case Published;
-    case Archived;
+    case Draft = "draft";
+    case Published = "published";
+    case Archived = "archived";
 }

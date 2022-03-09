@@ -20,8 +20,9 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->constrained()->onDelete('cascade');
             $table->string('title');
             $table->text('body')->fulltext();
-            $table->enum('state', PostState::class);
-            // $table->string('state')->default('draft');
+            // $table->enum('state', PostState::class);
+            // $table->enum('state', ['draft', 'archived','published', 'hold']);
+            $table->string('state')->default('draft');
             $table->timestamps();
         });
     }

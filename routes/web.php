@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\PostState;
 use App\Http\Controllers\PostsController;
 use App\Models\Post;
 use App\Models\User;
@@ -17,7 +18,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return Post::search('voluptatem')->paginate();
+    $post = new Post;
+
+    $post->user_id = 1;
+    $post->title= 'My title';
+    $post->body = 'My body';
+
+    $post->state = PostState::Published;
+
+    $post->save();
+
+    return 'Done';
+    // return Post::first()->state->value;
+    
+    // return Post::search('voluptatem')->paginate();
+
 
     // return Blade::render('{{ $greeting }}, World', ['greeting' => 'Hello']);
 
@@ -31,6 +46,10 @@ Route::get('/', function () {
 Route::get('/endpoint', function () {
     // return redirect()->route('name');
     return to_route('home');
+});
+
+Route::get('/posts/{state}', function(PostState $state){
+    dd($state);
 });
 
 

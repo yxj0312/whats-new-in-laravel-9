@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\PostState;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
@@ -9,6 +10,10 @@ use Laravel\Scout\Searchable;
 class Post extends Model
 {
     use HasFactory, Searchable;
+
+    protected $casts = [
+        'state' => PostState::class
+    ];
 
     #[SearchUsingFullText('body')]
     public function toSearchableArray()
