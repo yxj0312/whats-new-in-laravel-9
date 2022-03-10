@@ -31,11 +31,12 @@ class Post extends Model
 
     public function path(): Attribute
     {
-        
+        return Attribute::get(fn() => route('posts.show', $this));
+        // return new Attribute(fn() => route('posts.show', $this));
     }
 
-    public function getPathAttribute()
-    {
-        return route('posts.show', $this);
-    }
+    // public function getPathAttribute()
+    // {
+    //     return route('posts.show', $this);
+    // }
 }

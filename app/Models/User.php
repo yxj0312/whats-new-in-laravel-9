@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Attribute;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -42,6 +43,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function username(): Attribute
+    {
+        return new Attribute(
+            get: fn($value) => ucwords($value),
+            set: fn($value) => strtolower($value)
+        );
+    }
 
     public function posts()
     {
