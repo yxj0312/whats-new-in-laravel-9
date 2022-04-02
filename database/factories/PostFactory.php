@@ -19,8 +19,9 @@ class PostFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'title' => $this->faker->sentence(),
-            'body' => $this->faker->paragraph()
+            'title' => ucfirst($this->faker->words(5, true)),
+            'body' => $this->faker->sentences(12, true),
+            'created_at' => $this->faker->dateTimeBetween('-30 days', now()) 
         ];
     }
 }
