@@ -16,9 +16,9 @@ class Post extends Model
         'state' => PostState::class
     ];
 
-    protected $appends = [
-        'path'
-    ];
+    // protected $appends = [
+    //     'path'
+    // ];
 
     #[SearchUsingFullText('body')]
     public function toSearchableArray()
@@ -29,11 +29,11 @@ class Post extends Model
         ];
     }
 
-    public function path(): Attribute
-    {
-        return Attribute::get(fn() => route('posts.show', $this));
-        // return new Attribute(fn() => route('posts.show', $this));
-    }
+    // public function path(): Attribute
+    // {
+    //     return Attribute::get(fn() => route('posts.show', $this));
+    //     // return new Attribute(fn() => route('posts.show', $this));
+    // }
 
     // public function getPathAttribute()
     // {

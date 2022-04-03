@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return Post::latest()->get();
     }
 
     /**
@@ -36,7 +36,16 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|min:3',
+            'body' => 'required|min:3'
+        ]);
+
+        return Post::create([
+            'user_id' => 1,
+            'title' => $request->title,
+            'body' => $request->body
+        ]);
     }
 
     /**
@@ -47,7 +56,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return $post;
     }
 
     /**
