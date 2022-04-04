@@ -16,6 +16,8 @@ class Post extends Model
         'state' => PostState::class
     ];
 
+    protected $guarded = [];
+
     // protected $appends = [
     //     'path'
     // ];
