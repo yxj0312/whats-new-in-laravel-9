@@ -3,7 +3,7 @@ namespace App\Repository;
 
 use Illuminate\Support\Collection;
 
-interface UserRepositoryInterface
+interface PostRepositoryInterface
 {
    public function all(): Collection;
 }
