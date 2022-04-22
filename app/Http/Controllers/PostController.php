@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use App\Repository\PostRepositoryInterface;
 
 class PostController extends Controller
 {
+    private $postRepository;
+
+    public function __construct(PostRepositoryInterface $postRepository)
+    {
+        $this->postRepository = $postRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +23,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Post::with('user:id,name')->latest()->get();
+        return $this->postRepository->latest()->get();
     }
 
     /**
