@@ -5,6 +5,7 @@ namespace App\Repository\Eloquent;
 use App\Models\Post;
 use App\Repository\PostRepositoryInterface;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 
 class PostRepository extends BaseRepository implements PostRepositoryInterface
@@ -31,5 +32,10 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
     public function latest(): Builder
     {
         return $this->model->with('user:id,name')->latest();
+    }
+
+    public function load($relations): Model
+    {
+        return $this->model->load($relations);
     }
 }
