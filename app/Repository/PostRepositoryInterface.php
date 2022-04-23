@@ -9,5 +9,6 @@ interface PostRepositoryInterface
 {
    public function all(): Collection;
    public function latest(): Builder;
-   public function load($relations): Model;
+   // public function with($relations): Builder;
+   // public function load($relations): Model;
 }

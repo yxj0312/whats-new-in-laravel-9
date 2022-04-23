@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use App\Repository\Eloquent\PostRepository;
 use App\Repository\PostRepositoryInterface;
 
 class PostController extends Controller
 {
     private $postRepository;
 
-    public function __construct(PostRepositoryInterface $postRepository)
+    public function __construct(PostRepository $postRepository)
     {
         $this->postRepository = $postRepository;
     }
@@ -64,7 +65,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return $this->postRepository->load('user:id,name');
+        return $this->postRepository->find($post)->load('user:id,name');
         // return $post->load('user:id,name');
     }
 

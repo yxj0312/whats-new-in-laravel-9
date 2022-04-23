@@ -3,6 +3,7 @@ namespace App\Repository;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 /**
 * Interface EloquentRepositoryInterface
@@ -20,5 +21,6 @@ interface EloquentRepositoryInterface
     * @param $id
     * @return Model
     */
-   public function find($id): ?Model;
+   // public function find($id): ?Model;
+   public function find($id): ?Collection;
 }
