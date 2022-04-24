@@ -30,10 +30,10 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
         return $this->model->all();
     }
 
-    // public function with($relation): Builder
-    // {
-        
-    // }
+    public function with($relations): Builder
+    {
+        return $this->model->with($relations);
+    }
 
     public function latest(): Builder
     {

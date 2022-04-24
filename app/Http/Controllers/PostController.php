@@ -24,7 +24,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return $this->postRepository->latest()->get();
+        return $this->postRepository->with('user:id,name')->latest()->get();
+        // return $this->postRepository->latest()->get();
     }
 
     /**
