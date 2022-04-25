@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,8 @@ Route::get('/', function () {
 });
 
 Route::get('/users', [UsersController::class, 'index']);
+
+Route::get('/images', [ImageController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
