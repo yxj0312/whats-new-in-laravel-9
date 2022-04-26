@@ -22,6 +22,8 @@ Route::get('/', function () {
 Route::get('/users', [UsersController::class, 'index']);
 
 Route::get('/images', [ImageController::class, 'index']);
+Route::get('/images-show', [ImageController::class, 'show']);
+Route::post('/upload', [ImageController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
