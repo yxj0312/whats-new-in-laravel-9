@@ -34,3 +34,5 @@
         </div>
     </body>
 </html>
+
+<script src="{{ mix('js/app.js') }}" defer></script>
