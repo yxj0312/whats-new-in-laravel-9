@@ -1,13 +1,15 @@
 <template>
     <div>
         <div class="mt-4">
-            <file-pond
-                name="image"
-                ref="pond"
+            <file-pond 
+                name="image" 
+                ref="pond" 
                 label-idle="Click to choose image, or drag here..."
-                @init="filepondInitialized"
+                @init="filepondInitialized" 
                 accepted-file-types="image/*"
+                @processfile="handleProcessedFile"    
             ></file-pond>
+
         </div>
         <div class="mt-8 mb-24">
             <h3 class="text-2xl font-medium text-center">Image Gallery</h3>
@@ -29,13 +31,13 @@ import axios from 'axios';
 setOptions({
     server: {
         process: {
-            url:'./upload',
+            url: './upload',
             headers: {
-                'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content  
+                'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
             }
         }
     }
-});1
+}); 1
 
 const FilePond = vueFilePond(FilePondPluginFileValidationType);
 
@@ -51,7 +53,7 @@ export default {
     },
     mounted() {
         axios.get('/images-show')
-            .then((response)=>{
+            .then((response) => {
                 this.images = response.data
             })
             .catch((error) => {
@@ -62,7 +64,18 @@ export default {
     methods: {
         filepondInitialized() {
             console.log(this.$refs.pond)
+        },
+        handleProcessedFile(error, file) {
+            if (error) {
+                console.error(error);
+                return;
+            }
+
+            console.log(file.serverId)
+
+           this.images.unshift(file.serverId);
         }
+
     }
 }
 </script>

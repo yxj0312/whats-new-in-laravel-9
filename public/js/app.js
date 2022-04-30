@@ -24302,6 +24302,15 @@ var FilePond = vue_filepond__WEBPACK_IMPORTED_MODULE_0___default()((filepond_plu
   methods: {
     filepondInitialized: function filepondInitialized() {
       console.log(this.$refs.pond);
+    },
+    handleProcessedFile: function handleProcessedFile(error, file) {
+      if (error) {
+        console.error(error);
+        return;
+      }
+
+      console.log(file.serverId);
+      this.images.unshift(file.serverId);
     }
   }
 });
@@ -24346,10 +24355,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     ref: "pond",
     "label-idle": "Click to choose image, or drag here...",
     onInit: $options.filepondInitialized,
-    "accepted-file-types": "image/*"
+    "accepted-file-types": "image/*",
+    onProcessfile: $options.handleProcessedFile
   }, null, 8
   /* PROPS */
-  , ["onInit"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.images, function (image, index) {
+  , ["onInit", "onProcessfile"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.images, function (image, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       key: index
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
