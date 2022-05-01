@@ -30,16 +30,23 @@ import FilePondPluginFileValidationType from 'filepond-plugin-file-validate-type
 import FilePondPluginFileValidationSize from 'filepond-plugin-file-validate-size';
 import axios from 'axios';
 
+let serverMessage = {};
 setOptions({
     server: {
         process: {
             url: './upload',
+            onerror: (response) => {
+                serverMessage = JSON.parse(response);
+            },
             headers: {
                 'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
             }
         }
+    },
+    labelFileProcessingError: () => {
+        return serverMessage.error;
     }
-}); 1
+}); 
 
 const FilePond = vueFilePond(FilePondPluginFileValidationType, FilePondPluginFileValidationSize);
 

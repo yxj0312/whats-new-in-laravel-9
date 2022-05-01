@@ -24272,17 +24272,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var serverMessage = {};
 (0,vue_filepond__WEBPACK_IMPORTED_MODULE_0__.setOptions)({
   server: {
     process: {
       url: './upload',
+      onerror: function onerror(response) {
+        serverMessage = JSON.parse(response);
+      },
       headers: {
         'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
       }
     }
+  },
+  labelFileProcessingError: function labelFileProcessingError() {
+    return serverMessage.error;
   }
 });
-1;
 var FilePond = vue_filepond__WEBPACK_IMPORTED_MODULE_0___default()((filepond_plugin_file_validate_type__WEBPACK_IMPORTED_MODULE_2___default()), (filepond_plugin_file_validate_size__WEBPACK_IMPORTED_MODULE_3___default()));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
