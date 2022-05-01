@@ -7,7 +7,8 @@
                 label-idle="Click to choose image, or drag here..."
                 @init="filepondInitialized" 
                 accepted-file-types="image/jpg, image/jpeg, image/png"
-                @processfile="handleProcessedFile"    
+                @processfile="handleProcessedFile"
+                max-file-size="1MB"
             ></file-pond>
 
         </div>
@@ -26,6 +27,7 @@
 import vueFilePond, { setOptions } from 'vue-filepond';
 import "filepond/dist/filepond.min.css";
 import FilePondPluginFileValidationType from 'filepond-plugin-file-validate-type';
+import FilePondPluginFileValidationSize from 'filepond-plugin-file-validate-size';
 import axios from 'axios';
 
 setOptions({
@@ -39,7 +41,7 @@ setOptions({
     }
 }); 1
 
-const FilePond = vueFilePond(FilePondPluginFileValidationType);
+const FilePond = vueFilePond(FilePondPluginFileValidationType, FilePondPluginFileValidationSize);
 
 export default {
     components: {
