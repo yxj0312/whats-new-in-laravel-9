@@ -30,3 +30,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+
+Route::get('/css-grids/ep01', function () {
+    return view('css-grids/design-agency-services');
+});
