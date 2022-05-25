@@ -13,6 +13,10 @@
             color: white;
 
             display: grid;
+            
+            /* grid-template-columns: auto auto; */
+            /* grid-template-columns: 1fr auto; */
+
             /* Only fr units */
             grid-template-columns: 1fr 2fr;
 
