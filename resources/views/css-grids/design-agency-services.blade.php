@@ -16,6 +16,7 @@
             /* grid-template-columns: 20rem 25rem; */
             /* three column taking up one fraction of the space */
             /* grid-template-columns: 1fr 1fr 1fr; */
+            /* grid-template-columns: 1fr 2fr; */
             grid-template-columns: repeat(3, 1fr);
          }
          @media screen and (min-width: 480px) {

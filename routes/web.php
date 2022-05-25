@@ -35,3 +35,7 @@ require __DIR__.'/auth.php';
 Route::get('/css-grids/ep01', function () {
     return view('css-grids/design-agency-services');
 });
+
+Route::get('/css-grids/ep02', function () {
+    return view('css-grids/fast-food-menu');
+});
