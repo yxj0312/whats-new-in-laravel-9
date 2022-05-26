@@ -47,3 +47,7 @@ Route::get('/css-grids/ep03-1', function () {
 Route::get('/css-grids/ep03-2', function () {
     return view('css-grids/full-page-menu');
 });
+
+Route::get('/css-grids/ep04', function () {
+    return view('css-grids/fast-food-menu-space');
+});
