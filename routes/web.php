@@ -39,3 +39,7 @@ Route::get('/css-grids/ep01', function () {
 Route::get('/css-grids/ep02', function () {
     return view('css-grids/fast-food-menu');
 });
+
+Route::get('/css-grids/ep03', function () {
+    return view('css-grids/page-layout-grid');
+});
