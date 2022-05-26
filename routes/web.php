@@ -40,6 +40,10 @@ Route::get('/css-grids/ep02', function () {
     return view('css-grids/fast-food-menu');
 });
 
-Route::get('/css-grids/ep03', function () {
+Route::get('/css-grids/ep03-1', function () {
     return view('css-grids/page-layout-grid');
+});
+
+Route::get('/css-grids/ep03-2', function () {
+    return view('css-grids/full-page-menu');
 });
