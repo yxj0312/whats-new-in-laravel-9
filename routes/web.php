@@ -48,6 +48,10 @@ Route::get('/css-grids/ep03-2', function () {
     return view('css-grids/full-page-menu');
 });
 
-Route::get('/css-grids/ep04', function () {
+Route::get('/css-grids/ep04-1', function () {
     return view('css-grids/fast-food-menu-space');
+});
+
+Route::get('/css-grids/ep04-2', function () {
+    return view('css-grids/shopping-cart-summary');
 });
