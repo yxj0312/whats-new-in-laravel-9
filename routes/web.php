@@ -55,3 +55,7 @@ Route::get('/css-grids/ep04-1', function () {
 Route::get('/css-grids/ep04-2', function () {
     return view('css-grids/shopping-cart-summary');
 });
+
+Route::get('/css-grids/ep05-2', function () {
+    return view('css-grids/center-a-div');
+});
