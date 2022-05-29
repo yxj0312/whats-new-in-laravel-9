@@ -3,7 +3,7 @@
    <head>
       <title>Team Profiles</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="../../base.css" />
+      <link rel="stylesheet" href="{{ asset('css/base.css') }}" />
       <style type="text/css">
          section {
             background-color: #232b38;
