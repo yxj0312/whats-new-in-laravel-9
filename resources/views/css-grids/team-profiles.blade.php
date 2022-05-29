@@ -14,6 +14,8 @@
             height: 16rem;
 
             display: grid;
+            /* grid-template-columns: repeat(4, 1fr); */
+            /* better than above */
             grid-template-columns: repeat(3, 1fr) auto;
             /* justify-items: start;
             align-items: end; */
