@@ -63,3 +63,7 @@ Route::get('/css-grids/ep05-1', function () {
 Route::get('/css-grids/ep05-2', function () {
     return view('css-grids/center-a-div');
 });
+
+Route::get('/css-grids/ep06-1', function () {
+    return view('css-grids/restaurant-ratings');
+});
