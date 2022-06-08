@@ -32,10 +32,22 @@
             #message-block {
                grid-column: 2;
                grid-row: 1 / span 2;
+               /* grid-row: 1 / 3; */
+
+               /* grid-column-start: 2;
+               grid-row-start: 1;
+               grid-row-end: 3; */
+
+               /* grid-area: 1 / 2 / 3 / -1;
+               grid-area: 1 / 2 / 3; */
             }
+            /* 3 can also be -1 here */
             button {
                grid-column-start: 1;
                grid-column-end: -1;
+               /* grid-column: 1 / -1;
+               grid-column: 1 / span 2;
+               grid-column: span 2; */
             }
          }
       </style>
