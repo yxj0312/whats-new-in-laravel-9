@@ -71,3 +71,7 @@ Route::get('/css-grids/ep06-1', function () {
 Route::get('/css-grids/ep06-2', function () {
     return view('css-grids/profile-card');
 });
+
+Route::get('/css-grids/ep07', function () {
+    return view('css-grids/contact-form');
+});
