@@ -76,6 +76,10 @@ Route::get('/css-grids/ep07', function () {
     return view('css-grids/contact-form');
 });
 
-Route::get('/css-grids/ep08-2', function () {
+Route::get('/css-grids/ep08-1', function () {
     return view('css-grids/contact-form-2');
+});
+
+Route::get('/css-grids/ep08-2', function () {
+    return view('css-grids/image-caption');
 });
