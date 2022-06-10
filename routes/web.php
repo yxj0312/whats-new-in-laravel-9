@@ -87,3 +87,7 @@ Route::get('/css-grids/ep08-2', function () {
 Route::get('/css-grids/ep09-1', function () {
     return view('css-grids/restaurant-listing');
 });
+
+Route::get('/css-grids/ep09-2', function () {
+    return view('css-grids/pricing-plans');
+});
