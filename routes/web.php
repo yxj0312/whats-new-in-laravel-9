@@ -83,3 +83,7 @@ Route::get('/css-grids/ep08-1', function () {
 Route::get('/css-grids/ep08-2', function () {
     return view('css-grids/image-caption');
 });
+
+Route::get('/css-grids/ep09-1', function () {
+    return view('css-grids/restaurant-listing');
+});
