@@ -15,6 +15,7 @@
             display: grid;
             gap: 2.4rem;
             display: grid;
+            /* auto fit as many items in one row as you can, here (12rem min and 1fr max) */
             grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
          }
          section > div > h2 {
