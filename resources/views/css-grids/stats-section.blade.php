@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Stats Section</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="../../css/base.css" />
+      <style type="text/css">
+         section {
+            max-width: 54rem;
+            margin: 4rem auto 0;
+            padding: 1.2rem;
+            color: white;
+
+            display: grid;
+            gap: 1.6rem;
+            /* grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); */
+            grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+         }
+         section > div {
+            padding: 1rem;
+            background-color: #32343c;
+            border-radius: 0.4rem;
+         }
+         p {
+            font-size: 0.8rem;
+            opacity: 0.8;
+         }
+         span {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ca97fa;
+         }
+      </style>
+   </head>
+   <body>
+      <section>
+         <div>
+            <p>Statistic 1</p>
+            <span>81.8%</span>
+         </div>
+         <div>
+            <p>Statistic 2</p>
+            <span>405</span>
+         </div>
+         <!-- <div>
+            <p>Statistic 3</p>
+            <span>6218</span>
+         </div>
+         <div>
+            <p>Statistic 4</p>
+            <span>33.1%</span>
+         </div>
+         <div>
+            <p>Statistic 5</p>
+            <span>1.1k</span>
+         </div>
+         <div>
+            <p>Statistic 6</p>
+            <span>76</span>
+         </div>
+         <div>
+            <p>Statistic 7</p>
+            <span>95.9%</span>
+         </div> -->
+      </section>
+   </body>
+</html>

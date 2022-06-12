@@ -95,3 +95,7 @@ Route::get('/css-grids/ep09-2', function () {
 Route::get('/css-grids/ep10-1', function () {
     return view('css-grids/responsive-services');
 });
+
+Route::get('/css-grids/ep10-2', function () {
+    return view('css-grids/stats-section');
+});
