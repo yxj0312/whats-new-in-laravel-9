@@ -14,6 +14,8 @@
          @media screen and (min-width: 480px) {
             nav {
                grid-template-columns: repeat(2, 1fr);
+               /* could be replace by gird-auto-rows:1fr */
+               /* grid-template-rows: repeat(3, 1fr); */
             }
          }
          @media screen and (min-width: 768px) {
