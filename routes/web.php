@@ -99,3 +99,7 @@ Route::get('/css-grids/ep10-1', function () {
 Route::get('/css-grids/ep10-2', function () {
     return view('css-grids/stats-section');
 });
+
+Route::get('/css-grids/ep11-1', function () {
+    return view('css-grids/instructions');
+});
