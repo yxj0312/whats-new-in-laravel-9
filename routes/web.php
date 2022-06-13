@@ -103,3 +103,7 @@ Route::get('/css-grids/ep10-2', function () {
 Route::get('/css-grids/ep11-1', function () {
     return view('css-grids/instructions');
 });
+
+Route::get('/css-grids/ep11-2', function () {
+    return view('css-grids/responsive-full-page-menu');
+});
