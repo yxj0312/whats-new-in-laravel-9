@@ -107,3 +107,7 @@ Route::get('/css-grids/ep11-1', function () {
 Route::get('/css-grids/ep11-2', function () {
     return view('css-grids/responsive-full-page-menu');
 });
+
+Route::get('/css-grids/ep12', function () {
+    return view('css-grids/dashboard-layout');
+});
