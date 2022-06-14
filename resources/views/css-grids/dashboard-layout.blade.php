@@ -29,8 +29,12 @@
             padding: 1.5rem;
         }
 
-        container {
+        .container {
             margin-top: 1.2rem;
+
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 1.5rem;
         }
 
          .block {
