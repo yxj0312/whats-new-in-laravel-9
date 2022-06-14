@@ -10,6 +10,9 @@
         body {
             background-color: #212332;
             min-height: 100vh;
+
+            display: grid;
+            grid-template-columns: 14rem 1fr;
         }
 
         section {
