@@ -33,6 +33,12 @@
             margin-top: 1.2rem;
         }
 
+         .block {
+            background-color: #2a2d3e;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+         }
+
         .block1 {
             height: 9rem;
         }
