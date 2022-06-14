@@ -45,30 +45,33 @@
 
         .block1 {
             height: 9rem;
+
+            /* As a grid item */
+            grid-column: span 2;
         }
 
         .block2 {
             height: 16rem;
 
-
+            grid-column: span 5;
         }
 
         .block3 {
             height: 16rem;
 
-
+            grid-column: span 3;
         }
 
         .block4 {
             height: 12rem;
 
-
+            grid-column: span 5;
         }
 
         .block5 {
             height: 12rem;
 
-
+            grid-column: span 3;
         }
 
         h3 {
