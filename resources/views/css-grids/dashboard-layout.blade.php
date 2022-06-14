@@ -48,6 +48,11 @@
 
             /* As a grid item */
             grid-column: span 2;
+
+            /* As a grid container */
+            display: grid;
+            grid-template-columns: auto auto;
+            place-content: space-between;
         }
 
         .block2 {
