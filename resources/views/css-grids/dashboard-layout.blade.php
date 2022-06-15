@@ -12,8 +12,13 @@
             min-height: 100vh;
 
             display: grid;
-            grid-template-columns: 14rem 1fr;
         }
+
+        @media screen and (min-width: 480px) {
+            body {
+                grid-template-columns: 14rem 1fr;
+            }
+         }
 
         section {
             padding: 1.5rem;
