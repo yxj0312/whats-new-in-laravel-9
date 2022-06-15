@@ -21,7 +21,14 @@
 
         section.left {
             background-color: #2a2d3e;
+            display: none;
         }
+
+        @media screen and (min-width: 480px) {
+            section.left {
+                display: block
+            }
+         }
 
         nav {
             position: fixed;
