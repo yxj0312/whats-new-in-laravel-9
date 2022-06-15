@@ -59,7 +59,7 @@
             height: 9rem;
 
             /* As a grid item */
-            grid-column: span 2;
+            grid-column: span 8;
 
             /* As a grid container */
             display: grid;
@@ -67,17 +67,41 @@
             place-content: space-between;
         }
 
+        @media screen and (min-width: 480px) {
+            .block1 {
+                grid-column: span 8;
+            }
+         }
+
+        @media screen and (min-width: 768px) {
+            .block1 {
+                grid-column: span 2;
+            }
+         }
+
         .block2 {
             height: 16rem;
 
-            grid-column: span 5;
+            grid-column: span 8;
         }
+
+        @media screen and (min-width: 768px) {
+            .block2 {
+                grid-column: span 5;
+            }
+         }
 
         .block3 {
             height: 16rem;
 
-            grid-column: span 3;
+            grid-column: span 8;
         }
+
+        @media screen and (min-width: 768px) {
+            .block3 {
+                grid-column: span 3;
+            }
+         }
 
         .block4 {
             height: 12rem;
