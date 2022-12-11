@@ -56,4 +56,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+
+    public function company()
+    {
+        // dd('123');
+        return $this->belongsTo(Company::class);
+    }
 }
