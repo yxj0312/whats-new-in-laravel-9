@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <!-- <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
-        </h2>
+        </h2> -->
     </x-slot>
     <!-- component -->
     <div class="flex flex-col">
@@ -32,6 +32,7 @@
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $user->id }}</td>
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                         {{ $user->name }}
+                        <!-- {{ $user }} -->
                     </td>
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                         {{ $user->email }}
@@ -43,9 +44,14 @@
                 @endforeach
             </tbody>
             </table>
+            <div class="mt-3">
+                {{ $users->links() }}
+            </div>
         </div>
         </div>
     </div>
+
+    
     </div>
 
 </x-app-layout>

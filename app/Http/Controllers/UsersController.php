@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Repository\UserRepositoryInterface;
 
 class UsersController extends Controller
@@ -15,7 +16,13 @@ class UsersController extends Controller
 
     public function index()
     {
-        $users = $this->userRepository->all();
+        // $users = $this->userRepository->all();
+
+        $users = User::query()
+            ->with('company')
+            ->simplePaginate();
+        
+        // dd($users);
 
         return view('users.index', [
             'users' => $users
