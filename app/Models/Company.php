@@ -9,7 +9,7 @@ class Company extends Model
 {
     use HasFactory;
 
-    protected $with = ['user'];
+    protected $with = ['users'];
 
     public function users()
     {
