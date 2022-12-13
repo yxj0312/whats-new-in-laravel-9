@@ -20,6 +20,7 @@ class UsersController extends Controller
 
         $users = User::query()
             ->with('company')
+            ->orderBy('name')
             ->simplePaginate();
         
         // dd($users);
