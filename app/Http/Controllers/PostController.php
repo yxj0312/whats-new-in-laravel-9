@@ -7,6 +7,7 @@ use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Repository\Eloquent\PostRepository;
 use App\Repository\PostRepositoryInterface;
+use Illuminate\View\View;
 
 class PostController extends Controller
 {
@@ -24,7 +25,14 @@ class PostController extends Controller
      */
     public function index()
     {
-        return $this->postRepository->with('user:id,name')->latest()->get();
+        $years = Post::query()
+            ->with('author')
+            ->latest('updated_at')
+            ->get()
+            ->groupBy(fn ($post) => $post->updated_at->year);
+
+        return View::make('posts', ['years' => $years]);
+        // return $this->postRepository->with('user:id,name')->latest()->get();
         // return $this->postRepository->latest()->get();
     }
 
