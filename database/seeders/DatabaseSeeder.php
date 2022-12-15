@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Company;
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -23,8 +24,12 @@ class DatabaseSeeder extends Seeder
         //     'email' => '123@123.com'
         // ]);
 
-        $this->call([
-            UserSeeder::class,
-        ]);
+        // $this->call([
+        //     UserSeeder::class,
+        // ]);
+
+        User::factory(20)->create()->each(fn ($user) => $user->posts()
+            ->createMany(Post::factory(20)->make()->toArray())
+        );
     }
 }

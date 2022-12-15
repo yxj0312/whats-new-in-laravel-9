@@ -16,13 +16,21 @@ return new class extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
+            // $table->id();
+            // $table->foreignIdFor(User::class)->constrained()->onDelete('cascade');
+            // $table->string('title');
+            // $table->text('body')->fulltext();
+            // // $table->enum('state', PostState::class);
+            // // $table->enum('state', ['draft', 'archived','published', 'hold']);
+            // $table->string('state')->default('draft');
+            // $table->timestamps();
+
             $table->id();
-            $table->foreignIdFor(User::class)->constrained()->onDelete('cascade');
+            $table->foreignId('author_id')->constrained('users');
             $table->string('title');
-            $table->text('body')->fulltext();
-            // $table->enum('state', PostState::class);
-            // $table->enum('state', ['draft', 'archived','published', 'hold']);
-            $table->string('state')->default('draft');
+            $table->string('slug');
+            $table->longText('body');
+            $table->dateTime('published_at');
             $table->timestamps();
         });
     }
