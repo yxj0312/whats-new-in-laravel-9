@@ -31,7 +31,11 @@ class PostController extends Controller
             ->get()
             ->groupBy(fn ($post) => $post->updated_at->year);
 
-        return View::make('posts', ['years' => $years]);
+        return view('posts.index', [
+            'years' => $years
+        ]);
+
+        // return View::make('posts', ['years' => $years]);
         // return $this->postRepository->with('user:id,name')->latest()->get();
         // return $this->postRepository->latest()->get();
     }
