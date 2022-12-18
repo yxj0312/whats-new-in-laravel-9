@@ -18,14 +18,17 @@ class UsersController extends Controller
     {
         // $users = $this->userRepository->all();
 
-        $users = User::query()
-            ->with('company')
-            ->orderBy('name')
-            ->simplePaginate();
-        
-        // dd($users);
+        // $users = User::query()
+        //     ->with('company')
+        //     ->orderBy('name')
+        //     ->simplePaginate();
 
-        return view('users.index', [
+        $users = User::query()
+            ->withLastLoginAt()
+            ->orderBy('name')
+            ->paginate();
+
+        return view('users.index2', [
             'users' => $users
         ]);
     }

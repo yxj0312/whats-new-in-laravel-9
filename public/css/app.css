@@ -488,6 +488,9 @@ video {
 }.mx-auto {
   margin-left: auto;
   margin-right: auto;
+}.-my-2 {
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem;
 }.ml-3 {
   margin-left: 0.75rem;
 }.-ml-px {
@@ -572,6 +575,8 @@ video {
   width: 1.5rem;
 }.min-w-full {
   min-width: 100%;
+}.min-w-0 {
+  min-width: 0px;
 }.max-w-6xl {
   max-width: 72rem;
 }.max-w-7xl {
@@ -694,6 +699,9 @@ video {
 }.bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}.bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }.fill-current {
   fill: currentColor;
 }.p-6 {
@@ -727,6 +735,9 @@ video {
 }.px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
+}.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }.pt-8 {
   padding-top: 2rem;
 }.pl-3 {
@@ -749,6 +760,10 @@ video {
   text-align: left;
 }.text-center {
   text-align: center;
+}.text-right {
+  text-align: right;
+}.align-middle {
+  vertical-align: middle;
 }.font-sans {
   font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }.text-sm {
@@ -792,6 +807,8 @@ video {
   line-height: 1.25;
 }.leading-9 {
   line-height: 2.25rem;
+}.leading-4 {
+  line-height: 1rem;
 }.tracking-tight {
   letter-spacing: -0.025em;
 }.tracking-wider {
@@ -923,6 +940,9 @@ video {
 }.hover\:text-gray-700:hover {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
+}.hover\:text-indigo-900:hover {
+  --tw-text-opacity: 1;
+  color: rgb(49 46 129 / var(--tw-text-opacity));
 }.hover\:underline:hover {
   text-decoration-line: underline;
 }.focus\:z-10:focus {
@@ -963,6 +983,8 @@ video {
 }.focus\:text-gray-500:focus {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
+}.focus\:underline:focus {
+  text-decoration-line: underline;
 }.focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -981,12 +1003,18 @@ video {
 }.active\:bg-gray-900:active {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}.active\:bg-gray-50:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }.active\:text-gray-700:active {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }.active\:text-gray-500:active {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
+}.active\:text-gray-800:active {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
 }.disabled\:opacity-25:disabled {
   opacity: 0.25;
 }@media (prefers-color-scheme: dark) {.dark\:border-gray-700 {
@@ -1017,6 +1045,9 @@ video {
   }.sm\:-my-px {
     margin-top: -1px;
     margin-bottom: -1px;
+  }.sm\:-mx-6 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
   }.sm\:ml-0 {
     margin-left: 0px;
   }.sm\:ml-10 {
@@ -1045,6 +1076,10 @@ video {
     justify-content: center;
   }.sm\:justify-between {
     justify-content: space-between;
+  }.sm\:truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }.sm\:rounded-lg {
     border-radius: 0.5rem;
   }.sm\:px-6 {
@@ -1056,9 +1091,24 @@ video {
     text-align: left;
   }.sm\:text-right {
     text-align: right;
+  }.sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }.sm\:leading-9 {
+    line-height: 2.25rem;
   }
-}@media (min-width: 768px) {.md\:grid-cols-2 {
+}@media (min-width: 768px) {.md\:mt-0 {
+    margin-top: 0px;
+  }.md\:ml-4 {
+    margin-left: 1rem;
+  }.md\:flex {
+    display: flex;
+  }.md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }.md\:items-center {
+    align-items: center;
+  }.md\:justify-between {
+    justify-content: space-between;
   }.md\:border-t-0 {
     border-top-width: 0px;
   }.md\:border-l {
@@ -1070,6 +1120,9 @@ video {
   }.lg\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
+  }.lg\:-mx-8 {
+    margin-left: -2rem;
+    margin-right: -2rem;
   }.lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
