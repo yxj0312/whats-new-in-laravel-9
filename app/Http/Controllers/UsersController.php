@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Login;
 use App\Models\User;
 use App\Repository\UserRepositoryInterface;
 
@@ -25,7 +26,10 @@ class UsersController extends Controller
 
         $users = User::query()
             // ->withLastLoginAt()
-            ->with('logins')
+            ->addSelect(['last_login_at' => Login::select('created_at')
+                ->whereColumn('user_id', 'users.id')
+                ->latest()
+                ->take(1)])
             ->orderBy('name')
             ->paginate();
 
