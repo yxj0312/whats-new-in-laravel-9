@@ -30,6 +30,7 @@ class UsersController extends Controller
                 ->whereColumn('user_id', 'users.id')
                 ->latest()
                 ->take(1)])
+            ->withCasts(['last_login_at' => 'datetime'])
             ->orderBy('name')
             ->paginate();
 
