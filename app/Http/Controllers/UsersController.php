@@ -25,12 +25,7 @@ class UsersController extends Controller
         //     ->simplePaginate();
 
         $users = User::query()
-            // ->withLastLoginAt()
-            ->addSelect(['last_login_at' => Login::select('created_at')
-                ->whereColumn('user_id', 'users.id')
-                ->latest()
-                ->take(1)])
-            ->withCasts(['last_login_at' => 'datetime'])
+            ->withLastLoginAt()
             ->orderBy('name')
             ->paginate();
 
