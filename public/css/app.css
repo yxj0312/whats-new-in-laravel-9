@@ -573,10 +573,10 @@ video {
   width: 1rem;
 }.w-6 {
   width: 1.5rem;
-}.min-w-full {
-  min-width: 100%;
 }.min-w-0 {
   min-width: 0px;
+}.min-w-full {
+  min-width: 100%;
 }.max-w-6xl {
   max-width: 72rem;
 }.max-w-7xl {
@@ -693,15 +693,15 @@ video {
 }.bg-indigo-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(238 242 255 / var(--tw-bg-opacity));
+}.bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }.bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }.bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-}.bg-gray-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }.fill-current {
   fill: currentColor;
 }.p-6 {
@@ -732,12 +732,12 @@ video {
 }.py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
 }.py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }.pt-8 {
   padding-top: 2rem;
 }.pl-3 {
@@ -781,22 +781,22 @@ video {
 }.text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }.text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }.font-medium {
   font-weight: 500;
 }.font-semibold {
   font-weight: 600;
+}.font-bold {
+  font-weight: 700;
 }.font-extrabold {
   font-weight: 800;
 }.font-light {
   font-weight: 300;
-}.font-bold {
-  font-weight: 700;
 }.uppercase {
   text-transform: uppercase;
 }.leading-5 {
@@ -805,14 +805,14 @@ video {
   line-height: 1.75rem;
 }.leading-tight {
   line-height: 1.25;
-}.leading-9 {
-  line-height: 2.25rem;
 }.leading-4 {
   line-height: 1rem;
-}.tracking-tight {
-  letter-spacing: -0.025em;
+}.leading-9 {
+  line-height: 2.25rem;
 }.tracking-wider {
   letter-spacing: 0.05em;
+}.tracking-tight {
+  letter-spacing: -0.025em;
 }.tracking-widest {
   letter-spacing: 0.1em;
 }.text-gray-500 {
@@ -937,12 +937,12 @@ video {
 }.hover\:text-gray-900:hover {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-}.hover\:text-gray-700:hover {
-  --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity));
 }.hover\:text-indigo-900:hover {
   --tw-text-opacity: 1;
   color: rgb(49 46 129 / var(--tw-text-opacity));
+}.hover\:text-gray-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
 }.hover\:underline:hover {
   text-decoration-line: underline;
 }.focus\:z-10:focus {
@@ -1000,12 +1000,12 @@ video {
 }.active\:bg-gray-100:active {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}.active\:bg-gray-900:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }.active\:bg-gray-50:active {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}.active\:bg-gray-900:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }.active\:text-gray-700:active {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
@@ -1036,7 +1036,10 @@ video {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
-}@media (min-width: 640px) {.sm\:mx-0\.5 {
+}@media (min-width: 640px) {.sm\:-mx-6 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }.sm\:mx-0\.5 {
     margin-left: 0.125rem;
     margin-right: 0.125rem;
   }.sm\:mx-0 {
@@ -1045,9 +1048,6 @@ video {
   }.sm\:-my-px {
     margin-top: -1px;
     margin-bottom: -1px;
-  }.sm\:-mx-6 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
   }.sm\:ml-0 {
     margin-left: 0px;
   }.sm\:ml-10 {
@@ -1114,15 +1114,15 @@ video {
   }.md\:border-l {
     border-left-width: 1px;
   }
-}@media (min-width: 1024px) {.lg\:mx-0\.5 {
+}@media (min-width: 1024px) {.lg\:-mx-8 {
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }.lg\:mx-0\.5 {
     margin-left: 0.125rem;
     margin-right: 0.125rem;
   }.lg\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
-  }.lg\:-mx-8 {
-    margin-left: -2rem;
-    margin-right: -2rem;
   }.lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;

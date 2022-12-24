@@ -26,6 +26,7 @@ class UsersController extends Controller
 
         $users = User::query()
             ->withLastLoginAt()
+            ->withLastLoginIpAddress()
             ->orderBy('name')
             ->paginate();
 
