@@ -64,10 +64,10 @@ class User extends Authenticatable
         return $this->belongsTo(Company::class);
     }
 
-    // public function logins()
-    // {
-    //     return $this->hasMany(Login::class);
-    // }
+    public function logins()
+    {
+        return $this->hasMany(Login::class);
+    }
 
     // public function scopeWithLastLoginAt($query)
     // {
@@ -98,7 +98,7 @@ class User extends Authenticatable
         $query->addSelect(['last_login_id' => Login::select('id')
             ->whereColumn('user_id', 'users.id')
             ->latest()
-            ->take(1)
+            ->take(1),
         ])->with('lastLogin');
     }
 }
