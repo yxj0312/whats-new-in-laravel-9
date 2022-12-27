@@ -90,15 +90,16 @@ class User extends Authenticatable
 
     public function lastLogin()
     {
-        return $this->hasMany(Login::class); 
+        // return $this->hasMany(Login::class); 
+        return $this->hasOne(Login::class)->latestOfMany();
     }
 
-    public function scopeWithLastLogin($query)
-    {
-        $query->addSelect(['last_login_id' => Login::select('id')
-            ->whereColumn('user_id', 'users.id')
-            ->latest()
-            ->take(1),
-        ])->with('lastLogin');
-    }
+    // public function scopeWithLastLogin($query)
+    // {
+    //     $query->addSelect(['last_login_id' => Login::select('id')
+    //         ->whereColumn('user_id', 'users.id')
+    //         ->latest()
+    //         ->take(1),
+    //     ])->with('lastLogin');
+    // }
 }
