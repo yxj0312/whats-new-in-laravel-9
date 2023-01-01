@@ -16,8 +16,12 @@ class CommentFactory extends Factory
      */
     public function definition()
     {
+        $date = $this->faker->dateTimeBetween('-10 years', 'now');
+
         return [
-            //
+            'comment' => $this->faker->sentences(random_int(1, 6), true),
+            'created_at' => $date,
+            'updated_at' => $date,
         ];
     }
 }

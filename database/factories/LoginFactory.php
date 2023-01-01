@@ -18,7 +18,7 @@ class LoginFactory extends Factory
     {
         return [
             'ip_address' => $this->faker->ipv4,
-        'created_at' => $this->faker->dateTimeThisDecade('now'),
+            'created_at' => $this->faker->dateTimeThisDecade('now'),
         ];
     }
 }

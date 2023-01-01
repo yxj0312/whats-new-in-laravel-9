@@ -21,7 +21,7 @@ class FeatureSeeder extends Seeder
 
         Feature::factory(60)->create()->each(function ($feature) use ($users) {
             $feature->comments()->createMany(
-                Comment::factory(rand(1, 50))->make()->each(function ($comment) use ($users) {
+                Comment::factory(random_int(1, 50))->make()->each(function ($comment) use ($users) {
                     $comment->user_id = $users->random()->id;
                 })->toArray()
             );
