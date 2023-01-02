@@ -26,18 +26,23 @@ class DatabaseSeeder extends Seeder
         //     'email' => '123@123.com'
         // ]);
 
-        // Seed for L1
+        // Seeder for L1
         // $this->call([
         //     UserSeeder::class,
         // ]);
         
-        // Seed for L2
+        // Seeder for L2
         // User::factory(20)->create()->each(fn ($user) => $user->posts()
         //     ->createMany(Post::factory(20)->make()->toArray())
         // );
 
-         User::factory(60)->create()->each(fn ($user) => $user->logins()
-            ->createMany(Login::factory(20)->make()->toArray())
-        );
+        // Seeder for L3
+        // User::factory(60)->create()->each(fn ($user) => $user->logins()
+        //     ->createMany(Login::factory(20)->make()->toArray())
+        // );
+
+        $this->call([
+            FeatureSeeder::class,
+        ]);
     }
 }
