@@ -16,8 +16,23 @@ class FeatureFactory extends Factory
      */
     public function definition()
     {
+        $title = $this->faker->randomElement(['Add', 'Fix', 'Improve']).' '.implode(' ', $this->faker->words(random_int(2, 5)));
         return [
-            //
+            'title' => $title,
+            'status' => $this->faker->randomElement([
+                'Requested',
+                'Requested',
+                'Requested',
+                'Requested',
+                'Requested',
+                'Requested',
+                'Requested',
+                'Requested',
+                'Requested',
+                'Planned',
+                'Completed',
+                'Completed',
+            ]),
         ];
     }
 }
