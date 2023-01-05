@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UsersController;
