@@ -1,4 +1,8 @@
 
+<x-app-layout>
+    <x-slot name="header">
+    </x-slot>
+
 <header class="bg-white shadow">
   <div class="max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
     <div class="md:flex md:items-center md:justify-between">
@@ -103,3 +107,5 @@
     </div>
   </div>
 </main>
+
+</x-app-layout>
