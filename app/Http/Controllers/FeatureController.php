@@ -16,9 +16,9 @@ class FeatureController extends Controller
     public function index()
     {
         $statuses = (object) [];
-        $statuses->requested = Feature::where('status', 'Requested');
-        $statuses->planned = Feature::where('status', 'Planned');
-        $statuses->completed = Feature::where('status', 'Completed');
+        $statuses->requested = Feature::where('status', 'Requested')->count();
+        $statuses->planned = Feature::where('status', 'Planned')->count();
+        $statuses->completed = Feature::where('status', 'Completed')->count();
 
         $features = Feature::query()
             ->withCount('comments')
