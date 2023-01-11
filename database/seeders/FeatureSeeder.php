@@ -17,7 +17,10 @@ class FeatureSeeder extends Seeder
      */
     public function run()
     {
-        $users = User::factory(250)->create();
+        // L5
+        // $users = User::factory(250)->create();
+        // L6
+        $users = $this->getUsers()->map(fn ($user) => User::factory()->create($user));
 
         Feature::factory(60)->create()->each(function ($feature) use ($users) {
             $feature->comments()->createMany(
