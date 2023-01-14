@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::get('/users', [UsersController::class, 'index']);
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/features', [FeatureController::class, 'index']);
+Route::get('/features/{feature}', [FeatureController::class, 'show']);
 
 Route::get('/images', [ImageController::class, 'index']);
 Route::get('/images-show', [ImageController::class, 'show']);

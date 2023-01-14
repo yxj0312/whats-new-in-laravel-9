@@ -1,5 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
+      {{ $feature->title }}
     </x-slot>
 
     <header class="bg-white shadow">
