@@ -69,9 +69,14 @@ class FeatureController extends Controller
      */
     public function show(Feature $feature)
     {
+        
+
+        // L6:Approach 1: eager loading feature's comment, which make the query number back to normal
+        // $feature->load('comments.user', 'comments.feature.comments');
+
+        // L6:Approach 2: manually set relation to avoid cycle relationship loading
         $feature->load('comments.user');
         $feature->comments->each->setRelation('feature', $feature);
-
         return view('features.show', ['feature' => $feature]);
     }
 
