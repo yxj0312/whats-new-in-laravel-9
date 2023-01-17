@@ -41,8 +41,33 @@ class DatabaseSeeder extends Seeder
         //     ->createMany(Login::factory(20)->make()->toArray())
         // );
 
-        $this->call([
-            FeatureSeeder::class,
+        // Seeder for L6
+        // $this->call([
+        //     FeatureSeeder::class,
+        // ]);
+
+        Company::factory(10000)->create()->each(fn ($company) => $company->users()
+            ->createMany(User::factory(10)->make()->map->getAttributes())
+        );
+
+        $user = User::find(10000);
+        $user->update([
+            'first_name' => 'Bill',
+            'last_name' => 'Gates',
+            'email' => 'bill.gates@microsoft.com',
+        ]);
+        $user->company->update([
+            'name' => 'Microsoft Corporation',
+        ]);
+
+        $user = User::find(20000);
+        $user->update([
+            'first_name' => 'Tim',
+            'last_name' => 'O\'Reilly',
+            'email' => 'tim@oreilly.com',
+        ]);
+        $user->company->update([
+            'name' => 'O\'Reilly Media Inc.',
         ]);
     }
 }
