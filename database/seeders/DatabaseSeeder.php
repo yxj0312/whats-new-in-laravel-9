@@ -46,11 +46,11 @@ class DatabaseSeeder extends Seeder
         //     FeatureSeeder::class,
         // ]);
 
-        Company::factory(10000)->create()->each(fn ($company) => $company->users()
+        Company::factory(100)->create()->each(fn ($company) => $company->users()
             ->createMany(User::factory(10)->make()->map->getAttributes())
         );
 
-        $user = User::find(10000);
+        $user = User::find(100);
         $user->update([
             'first_name' => 'Bill',
             'last_name' => 'Gates',
@@ -60,7 +60,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Microsoft Corporation',
         ]);
 
-        $user = User::find(20000);
+        $user = User::find(200);
         $user->update([
             'first_name' => 'Tim',
             'last_name' => 'O\'Reilly',
