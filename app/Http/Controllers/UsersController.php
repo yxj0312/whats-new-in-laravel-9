@@ -24,13 +24,21 @@ class UsersController extends Controller
         //     ->orderBy('name')
         //     ->simplePaginate();
 
+        // $users = User::query()
+        //     ->with('lastLogin')
+        //     ->orderBy('name')
+        //     ->paginate();
+
+        // return view('users.index2', [
+        //     'users' => $users
+        // ]);
+
+        // L7
         $users = User::query()
-            ->with('lastLogin')
-            ->orderBy('name')
+            ->with('company')
+            // ->search(request('search'))
             ->paginate();
 
-        return view('users.index2', [
-            'users' => $users
-        ]);
+        return view('users.index4', ['users' => $users]);
     }
 }
