@@ -102,4 +102,9 @@ class User extends Authenticatable
     //         ->take(1),
     //     ])->with('lastLogin');
     // }
+
+    public function scopeSearch($query, string $terms = null)
+    {
+        
+    }
 }

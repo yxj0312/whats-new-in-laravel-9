@@ -36,7 +36,7 @@ class UsersController extends Controller
         // L7
         $users = User::query()
             ->with('company')
-            // ->search(request('search'))
+            ->search(request('search'))
             ->paginate();
 
         return view('users.index4', ['users' => $users]);
