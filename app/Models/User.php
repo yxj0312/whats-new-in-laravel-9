@@ -111,7 +111,13 @@ class User extends Authenticatable
             // we need to check each keyword in isolation, which means we need to wrap it in the closure
             $query->where(function ($query) use ($term) {
                 $query->where('first_name', 'like', $term)
-                ->orWhere('first_name', 'like', $term);
+                ->orWhere('first_name', 'like', $term)
+                // company name doesn't exist in the table
+                // orWhereHas accept relationship as first argument.
+                // and a closure as a second argument
+                ->orWhereHas('company', function ($query) use ($term){
+                    $query->where('first_name', 'like', $term);
+                });
             });
         });
     }
