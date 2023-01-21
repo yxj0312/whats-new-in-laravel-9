@@ -105,6 +105,14 @@ class User extends Authenticatable
 
     public function scopeSearch($query, string $terms = null)
     {
-        
+        // bill gates microsofft
+        collect(explode(' ', $terms))->filter()->each(function ($term) use ($query) {
+            $term = '%'.$term.'%';
+            // we need to check each keyword in isolation, which means we need to wrap it in the closure
+            $query->where(function ($query) use ($term) {
+                $query->where('first_name', 'like', $term)
+                ->orWhere('first_name', 'like', $term);
+            });
+        });
     }
 }
