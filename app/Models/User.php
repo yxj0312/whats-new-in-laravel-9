@@ -105,8 +105,10 @@ class User extends Authenticatable
 
     public function scopeSearch($query, string $terms = null)
     {
-        // bill gates microsofft
-        collect(explode(' ', $terms))->filter()->each(function ($term) use ($query) {
+        // bill gates microsoft
+        // with explode cant search like "bill gates microsoft corp" with no prefix wildcard
+        // using "str_getcsv" we cant search it with "bill gates 'microsoft corp'"
+        collect(str_getcsv($terms,' ','"' ))->filter()->each(function ($term) use ($query) {
             $term = $term.'%';
             // we need to check each keyword in isolation, which means we need to wrap it in the closure
             $query->where(function ($query) use ($term) {
