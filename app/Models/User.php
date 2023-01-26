@@ -105,6 +105,9 @@ class User extends Authenticatable
 
     public function scopeSearch($query, string $terms = null)
     {
+        // L9: join approach
+        $query->join('companies', 'companies.id', '=', 'users-company_id');
+
         // bill gates microsoft
         // with explode cant search like "bill gates microsoft corp" with no prefix wildcard
         // using "str_getcsv" we cant search it with "bill gates 'microsoft corp'"
@@ -117,9 +120,10 @@ class User extends Authenticatable
                 // company name doesn't exist in the table
                 // orWhereHas accept relationship as first argument.
                 // and a closure as a second argument
-                ->orWhereHas('company', function ($query) use ($term) {
-                    $query->where('name', 'like', $term);
-                });
+                // ->orWhereHas('company', function ($query) use ($term) {
+                //     $query->where('name', 'like', $term);
+                // });
+                ->orWhere('companies,name', 'like', $term);
             });
         });
     }
