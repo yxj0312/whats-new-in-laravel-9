@@ -106,7 +106,7 @@ class User extends Authenticatable
     public function scopeSearch($query, string $terms = null)
     {
         // L9: join approach
-        $query->join('companies', 'companies.id', '=', 'users-company_id');
+        $query->join('companies', 'companies.id', '=', 'users.company_id');
 
         // bill gates microsoft
         // with explode cant search like "bill gates microsoft corp" with no prefix wildcard
@@ -123,7 +123,7 @@ class User extends Authenticatable
                 // ->orWhereHas('company', function ($query) use ($term) {
                 //     $query->where('name', 'like', $term);
                 // });
-                ->orWhere('companies,name', 'like', $term);
+                ->orWhere('companies.name', 'like', $term);
             });
         });
     }
