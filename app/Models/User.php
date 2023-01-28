@@ -117,13 +117,18 @@ class User extends Authenticatable
             $query->where(function ($query) use ($term) {
                 $query->where('first_name', 'like', $term)
                 ->orWhere('last_name', 'like', $term)
-                // company name doesn't exist in the table
-                // orWhereHas accept relationship as first argument.
-                // and a closure as a second argument
-                // ->orWhereHas('company', function ($query) use ($term) {
-                //     $query->where('name', 'like', $term);
-                // });
-                ->orWhere('companies.name', 'like', $term);
+                /* company name doesn't exist in the table
+                orWhereHas accept relationship as first argument.
+                and a closure as a second argument */
+                ->orWhereHas('company', function ($query) use ($term) {
+                    $query->where('name', 'like', $term);
+                });
+                /* join approach (doesn't help):
+                issue: we are linking the users and the conpany's tables together. 
+                Both of these approaches require us to check the company ID against the user's company ID 
+                As a result, the company table is become a dependency of the user's table
+                */
+                // ->orWhere('companies.name', 'like', $term);
             });
         });
     }
