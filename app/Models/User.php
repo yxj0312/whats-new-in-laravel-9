@@ -106,7 +106,7 @@ class User extends Authenticatable
     public function scopeSearch($query, string $terms = null)
     {
         // L9: join approach
-        $query->join('companies', 'companies.id', '=', 'users.company_id');
+        // $query->join('companies', 'companies.id', '=', 'users.company_id');
 
         // bill gates microsoft
         // with explode cant search like "bill gates microsoft corp" with no prefix wildcard
@@ -120,15 +120,22 @@ class User extends Authenticatable
                 /* company name doesn't exist in the table
                 orWhereHas accept relationship as first argument.
                 and a closure as a second argument */
-                ->orWhereHas('company', function ($query) use ($term) {
-                    $query->where('name', 'like', $term);
-                });
+                // ->orWhereHas('company', function ($query) use ($term) {
+                //     $query->where('name', 'like', $term);
+                // });
                 /* join approach (doesn't help):
                 issue: we are linking the users and the company's tables together. 
                 Both of these approaches require us to check the company ID against the user's company ID 
                 As a result, the company table is become a dependency of the user's table
                 */
                 // ->orWhere('companies.name', 'like', $term);
+
+                /* whereIn approach */
+                ->orWhereIn('company_id',function($query) use ($term) {
+                    $query->select('id')
+                        ->from('companies')
+                        ->where('name', 'like', $term);
+                });
             });
         });
     }
